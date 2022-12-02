@@ -3,7 +3,6 @@ import {
   InMemoryCache,
   ApolloClient,
   ApolloLink,
-  fromPromise,
 } from "@apollo/client";
 
 import { createUploadLink } from "apollo-upload-client";
