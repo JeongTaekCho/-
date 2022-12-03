@@ -2,7 +2,7 @@ import ItemBox from "../commons/itemBox";
 import * as S from "./main.styles";
 import { IMainUiProps } from "./main.types";
 
-const MainUi = ({ data }: IMainUiProps) => {
+const MainUi = ({ data, onClickToProducts }: IMainUiProps) => {
   return (
     <S.Wrapper>
       <S.Section>
@@ -128,7 +128,9 @@ const MainUi = ({ data }: IMainUiProps) => {
             return <ItemBox key={el._id} el={el} />;
           })}
         </S.ItemContainer>
-        <S.ItemMoreBtn>인기매물 더 보기</S.ItemMoreBtn>
+        <S.ItemMoreBtn onClick={onClickToProducts}>
+          인기매물 더 보기
+        </S.ItemMoreBtn>
       </S.Section3>
     </S.Wrapper>
   );

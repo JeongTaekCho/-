@@ -18,6 +18,10 @@ export const Navigation = styled.nav`
   margin-left: 4rem;
 `;
 
+export const LogoBox = styled.div`
+  cursor: pointer;
+`;
+
 export const Menu = styled.ul`
   display: flex;
   align-items: center;
@@ -28,6 +32,7 @@ export const MenuList = styled.li`
   font-size: 1.8rem;
   font-weight: 500;
   color: #111;
+  cursor: pointer;
 `;
 
 export const SubMenuBox = styled.div`
