@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 const Wrapper = styled.div`
   width: 20.7%;
+  cursor: pointer;
 `;
 
 const ImageBox = styled.div`
@@ -50,19 +52,21 @@ const ItemLike = styled.p`
 
 const ItemBox = ({ el }: any) => {
   return (
-    <Wrapper>
-      <ImageBox
-        style={{
-          backgroundImage: `url(https://storage.googleapis.com/${el.images[0]})`,
-        }}
-      ></ImageBox>
-      <ItemTitle>{el.name}</ItemTitle>
-      <ItemPrice>
-        {String(el.price).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원
-      </ItemPrice>
-      <ItemAddress>{el.createdAt}</ItemAddress>
-      <ItemLike>좋아요 {el.pickedCount}</ItemLike>
-    </Wrapper>
+    <Link href={`/products/${el._id}`}>
+      <Wrapper>
+        <ImageBox
+          style={{
+            backgroundImage: `url(https://storage.googleapis.com/${el.images[0]})`,
+          }}
+        ></ImageBox>
+        <ItemTitle>{el.name}</ItemTitle>
+        <ItemPrice>
+          {String(el.price).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원
+        </ItemPrice>
+        <ItemAddress>{el.createdAt}</ItemAddress>
+        <ItemLike>좋아요 {el.pickedCount}</ItemLike>
+      </Wrapper>
+    </Link>
   );
 };
 

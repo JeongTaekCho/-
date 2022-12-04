@@ -2,8 +2,12 @@ import * as S from "./detail.styles";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Avatar } from "@mui/material";
+import Heart from "../../commons/svg/heart";
+import { IProductDetailUiProps } from "./detail.types";
+import DOMPurify from "dompurify";
 
-const ProductDetailUi = () => {
+const ProductDetailUi = ({ data }: IProductDetailUiProps) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -16,29 +20,47 @@ const ProductDetailUi = () => {
       <S.Container>
         <S.SlickBox>
           <Slider {...settings}>
-            <S.SlickImgBox>
-              <S.SlickImg
-                src="https://dnvefa72aowie.cloudfront.net/origin/article/202211/ADB79916D1EAC8139B6B9C845E35B23E53DB1998138C669FAAF50197256803B8.jpg?q=95&s=1440x1440&t=inside"
-                alt=""
-              />
-            </S.SlickImgBox>
-            <S.SlickImgBox>
-              <S.SlickImg
-                src="https://dnvefa72aowie.cloudfront.net/origin/article/202211/ADB79916D1EAC8139B6B9C845E35B23E53DB1998138C669FAAF50197256803B8.jpg?q=95&s=1440x1440&t=inside"
-                alt=""
-              />
-            </S.SlickImgBox>
-            <S.SlickImgBox>
-              <S.SlickImg
-                src="https://dnvefa72aowie.cloudfront.net/origin/article/202211/ADB79916D1EAC8139B6B9C845E35B23E53DB1998138C669FAAF50197256803B8.jpg?q=95&s=1440x1440&t=inside"
-                alt=""
-              />
-            </S.SlickImgBox>
+            {data?.fetchUseditem.images.map((el, index) => {
+              return (
+                <S.SlickImgBox key={index}>
+                  <S.SlickImg
+                    src={`https://storage.googleapis.com/${el}`}
+                    alt=""
+                  />
+                </S.SlickImgBox>
+              );
+            })}
           </Slider>
         </S.SlickBox>
         <S.DetailTitleBox>
-          <S.SellerInfoBox></S.SellerInfoBox>
+          <S.SellerInfoBox>
+            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+            <S.SellerName>{data?.fetchUseditem.seller.name}</S.SellerName>
+          </S.SellerInfoBox>
+          <S.HeartBox>
+            <Heart />
+          </S.HeartBox>
         </S.DetailTitleBox>
+        <S.DetailContent>
+          <S.DetailTitle>{data?.fetchUseditem.name}</S.DetailTitle>
+          <S.DetailDate>
+            {data?.fetchUseditem.createdAt.slice(0, 10)}
+          </S.DetailDate>
+          <S.DetailPrice>{data?.fetchUseditem.price}원</S.DetailPrice>
+          {process.browser ? (
+            <S.DetailCon
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(data?.fetchUseditem.contents),
+              }}
+            ></S.DetailCon>
+          ) : (
+            <S.DetailCon></S.DetailCon>
+          )}
+
+          <S.LikePick>
+            좋아요 8 ∙ 찜 {data?.fetchUseditem.pickedCount}
+          </S.LikePick>
+        </S.DetailContent>
       </S.Container>
     </S.Wrapper>
   );

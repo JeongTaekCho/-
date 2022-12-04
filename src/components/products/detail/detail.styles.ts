@@ -71,4 +71,61 @@ export const DetailTitleBox = styled.div`
   border-bottom: 1px solid #e9ecef;
 `;
 
-export const SellerInfoBox = styled.div``;
+export const SellerInfoBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const SellerName = styled.p`
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.6px;
+  color: #212529;
+`;
+
+export const HeartBox = styled.div`
+  cursor: pointer;
+`;
+
+export const DetailContent = styled.div`
+  width: 100%;
+  padding: 3.2rem 0;
+`;
+
+export const DetailTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.6px;
+  color: #111;
+`;
+
+export const DetailDate = styled.p`
+  margin-top: 0.8rem;
+  font-size: 1.3rem;
+  letter-spacing: -0.6px;
+  color: #868e96;
+`;
+
+export const DetailPrice = styled.p`
+  margin-top: 1.3rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+`;
+
+export const DetailCon = styled.p`
+  font-size: 1.7rem;
+  letter-spacing: -0.6px;
+  margin: 2rem 0;
+  word-break: break-all;
+  line-height: 1.4;
+`;
+
+export const LikePick = styled.p`
+  font-size: 1.3rem;
+  letter-spacing: -0.6px;
+  color: #868e96;
+`;
