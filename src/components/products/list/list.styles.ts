@@ -47,3 +47,14 @@ export const ListBox = styled.div`
   gap: 6rem 5.7%;
   flex-wrap: wrap;
 `;
+
+export const ProductWriteBtn = styled.button`
+  padding: 1rem 2rem;
+  border: none;
+  background-color: #ff6f0f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+`;

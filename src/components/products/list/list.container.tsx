@@ -7,14 +7,31 @@ import ProductListUi from "./list.presenter";
 import { FETCH_USED_ITEMS } from "./list.queries";
 
 const ProductList = () => {
-  const { data } = useQuery<
+  const { data, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditems">,
     IQueryFetchUseditemsArgs
   >(FETCH_USED_ITEMS);
 
-  console.log(data);
+  const infiniteFun = () => {
+    if (data === undefined) return;
+    void fetchMore({
+      variables: {
+        page: Math.ceil(data.fetchUseditems.length / 10) + 1,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult.fetchUseditems)
+          return { fetchUseditems: [...prev.fetchUseditems] };
+        return {
+          fetchUseditems: [
+            ...prev.fetchUseditems,
+            ...fetchMoreResult.fetchUseditems,
+          ],
+        };
+      },
+    });
+  };
 
-  return <ProductListUi data={data} />;
+  return <ProductListUi data={data} infiniteFun={infiniteFun} />;
 };
 
 export default ProductList;
