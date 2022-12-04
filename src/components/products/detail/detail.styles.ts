@@ -92,6 +92,7 @@ export const HeartBox = styled.div`
 export const DetailContent = styled.div`
   width: 100%;
   padding: 3.2rem 0;
+  border-bottom: 1px solid #e9ecef;
 `;
 
 export const DetailTitle = styled.h2`

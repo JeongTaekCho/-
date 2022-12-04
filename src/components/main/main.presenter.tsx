@@ -45,7 +45,9 @@ const MainUi = ({ data, onClickToProducts }: IMainUiProps) => {
               동네 주민들과 가깝고 따뜻한 거래를 지금 경험해보세요.
             </S.SectionMent>
             <S.SectionBtnBox>
-              <S.SectionBtn type="button">인기매물 보기</S.SectionBtn>
+              <S.SectionBtn type="button" onClick={onClickToProducts}>
+                인기매물 보기
+              </S.SectionBtn>
               <S.SectionBtn type="button">믿을 수 있는 중고거래</S.SectionBtn>
             </S.SectionBtnBox>
           </S.SectionTextBox>
