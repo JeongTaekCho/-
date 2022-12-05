@@ -3,7 +3,9 @@ import { useRouter } from "next/router";
 import {
   IQuery,
   IQueryFetchUseditemArgs,
+  IQueryFetchUseditemsArgs,
 } from "../../../commons/types/generated/types";
+import { FETCH_USED_ITEMS } from "../list/list.queries";
 import ProductDetailUi from "./detail.presenter";
 import { FETCH_USED_ITEM } from "./detail.queries";
 
@@ -19,9 +21,16 @@ const ProductDetail = () => {
     },
   });
 
-  console.log(data);
+  const { data: bestProducts } = useQuery<
+    Pick<IQuery, "fetchUseditems">,
+    IQueryFetchUseditemsArgs
+  >(FETCH_USED_ITEMS);
 
-  return <ProductDetailUi data={data} />;
+  const bestProductList = bestProducts?.fetchUseditems.slice(0, 6);
+
+  console.log(bestProductList);
+
+  return <ProductDetailUi data={data} bestProductList={bestProductList} />;
 };
 
 export default ProductDetail;

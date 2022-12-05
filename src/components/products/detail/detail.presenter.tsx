@@ -6,8 +6,9 @@ import { Avatar } from "@mui/material";
 import Heart from "../../commons/svg/heart";
 import { IProductDetailUiProps } from "./detail.types";
 import DOMPurify from "dompurify";
+import ItemBox from "../../commons/itemBox";
 
-const ProductDetailUi = ({ data }: IProductDetailUiProps) => {
+const ProductDetailUi = ({ data, bestProductList }: IProductDetailUiProps) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -61,6 +62,17 @@ const ProductDetailUi = ({ data }: IProductDetailUiProps) => {
             좋아요 8 ∙ 찜 {data?.fetchUseditem.pickedCount}
           </S.LikePick>
         </S.DetailContent>
+        <S.ProductMoreBox>
+          <S.ProductMoreTitleBox>
+            <S.ProductTitle>당근마켓 인기중고</S.ProductTitle>
+            <S.ProductListBtn>더 구경하기</S.ProductListBtn>
+          </S.ProductMoreTitleBox>
+          <S.BestProductList>
+            {bestProductList?.map((el) => {
+              return <ItemBox key={el._id} el={el} />;
+            })}
+          </S.BestProductList>
+        </S.ProductMoreBox>
       </S.Container>
     </S.Wrapper>
   );

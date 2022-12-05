@@ -53,7 +53,7 @@ const ItemLike = styled.p`
 const ItemBox = ({ el }: any) => {
   return (
     <Link href={`/products/${el._id}`}>
-      <Wrapper>
+      <Wrapper className="w-32">
         <ImageBox
           style={{
             backgroundImage: `url(https://storage.googleapis.com/${el.images[0]})`,

@@ -130,3 +130,44 @@ export const LikePick = styled.p`
   letter-spacing: -0.6px;
   color: #868e96;
 `;
+
+export const ProductMoreBox = styled.section`
+  width: 100%;
+`;
+
+export const ProductMoreTitleBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.2rem 0 3rem;
+`;
+
+export const ProductTitle = styled.h2`
+  font-size: 1.8rem;
+  text-align: left;
+  letter-spacing: -0.6px;
+  font-weight: 600;
+  color: #111;
+`;
+
+export const ProductListBtn = styled.button`
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  text-decoration: none;
+  color: #ff8a3d;
+  border: none;
+  background: none;
+  cursor: pointer;
+`;
+
+export const BestProductList = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6rem 2%;
+  .w-32 {
+    width: 32%;
+  }
+`;
