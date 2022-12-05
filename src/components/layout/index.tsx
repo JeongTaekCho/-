@@ -1,4 +1,5 @@
-import { Header } from "antd/es/layout/layout";
+import Footer from "./Footer/footer.container";
+import { Header } from "./Header/header.container";
 
 interface IProps {
   children: JSX.Element;
@@ -9,6 +10,7 @@ export const Layout = (props: IProps) => {
     <>
       <Header />
       <>{props.children}</>
+      <Footer />
     </>
   );
 };
