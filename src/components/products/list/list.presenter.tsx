@@ -3,14 +3,20 @@ import * as S from "./list.styles";
 import { IProductListUiProps } from "./list.types";
 import InfiniteScroll from "react-infinite-scroller";
 
-const ProductListUi = ({ data, infiniteFun }: IProductListUiProps) => {
+const ProductListUi = ({
+  data,
+  infiniteFun,
+  onClickToWrite,
+}: IProductListUiProps) => {
   return (
     <S.Wrapper>
       <S.Container>
         <S.ListTite>중고거래 인기매물</S.ListTite>
         <S.SearchBox>
           <S.SearchInput type="text" placeholder="검색어를 입력해주세요." />
-          <S.ProductWriteBtn>물품 등록하기</S.ProductWriteBtn>
+          <S.ProductWriteBtn onClick={onClickToWrite}>
+            물품 등록하기
+          </S.ProductWriteBtn>
         </S.SearchBox>
         <InfiniteScroll
           pageStart={0}
