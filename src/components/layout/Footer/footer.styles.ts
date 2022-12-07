@@ -62,3 +62,57 @@ export const DownloadBtn = styled.button`
   cursor: pointer;
   padding: 0;
 `;
+
+export const FooterBottom = styled.div`
+  width: 100%;
+  padding-top: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
+export const FooterInfoBox = styled.div``;
+
+export const FooterInfo1Box = styled.div`
+  margin-bottom: 1.6rem;
+`;
+
+export const FooterInfo1 = styled.p`
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #868b94;
+  line-height: 1.5;
+  span {
+    font-weight: 600;
+  }
+`;
+
+export const FooterInfo2Box = styled.div`
+  display: flex;
+  gap: 1rem;
+  &.mb16 {
+    margin-bottom: 1.6rem;
+  }
+`;
+
+export const FooterInfoLink = styled.button`
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #868b94;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+`;
+
+export const SnsBtnBox = styled.div`
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+`;
+
+export const SnsBtn = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
+`;

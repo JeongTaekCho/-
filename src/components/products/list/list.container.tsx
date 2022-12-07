@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
 import {
   IQuery,
   IQueryFetchUseditemsArgs,
@@ -7,6 +8,12 @@ import ProductListUi from "./list.presenter";
 import { FETCH_USED_ITEMS } from "./list.queries";
 
 const ProductList = () => {
+  const router = useRouter();
+
+  const onClickToWrite = () => {
+    void router.push("/products/write");
+  };
+
   const { data, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditems">,
     IQueryFetchUseditemsArgs
@@ -31,7 +38,13 @@ const ProductList = () => {
     });
   };
 
-  return <ProductListUi data={data} infiniteFun={infiniteFun} />;
+  return (
+    <ProductListUi
+      data={data}
+      infiniteFun={infiniteFun}
+      onClickToWrite={onClickToWrite}
+    />
+  );
 };
 
 export default ProductList;
