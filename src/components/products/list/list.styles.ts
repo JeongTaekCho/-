@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding-top: 72px;
+  padding: 72px 0;
 `;
 
 export const Container = styled.div`

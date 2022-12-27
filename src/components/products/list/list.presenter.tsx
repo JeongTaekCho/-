@@ -7,13 +7,18 @@ const ProductListUi = ({
   data,
   infiniteFun,
   onClickToWrite,
+  onChangeSearch,
 }: IProductListUiProps) => {
   return (
     <S.Wrapper>
       <S.Container>
         <S.ListTite>중고거래 인기매물</S.ListTite>
         <S.SearchBox>
-          <S.SearchInput type="text" placeholder="검색어를 입력해주세요." />
+          <S.SearchInput
+            type="text"
+            placeholder="검색어를 입력해주세요."
+            onChange={onChangeSearch}
+          />
           <S.ProductWriteBtn onClick={onClickToWrite}>
             물품 등록하기
           </S.ProductWriteBtn>

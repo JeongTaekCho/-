@@ -4,6 +4,10 @@ import HeaderUi from "./header.presenter";
 export const Header = () => {
   const router = useRouter();
 
+  const onClickSearch = () => {
+    void router.push("/products/list");
+  };
+
   const onClickToProducts = () => {
     void router.push("/products/list");
   };
@@ -19,6 +23,7 @@ export const Header = () => {
       onClickToProducts={onClickToProducts}
       onClickToComunity={onClickToComunity}
       onClickToMain={onClickToMain}
+      onClickSearch={onClickSearch}
     />
   );
 };
