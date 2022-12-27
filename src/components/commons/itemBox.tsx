@@ -63,7 +63,7 @@ const ItemBox = ({ el }: any) => {
         <ItemPrice>
           {String(el.price).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원
         </ItemPrice>
-        <ItemAddress>{el.createdAt}</ItemAddress>
+        <ItemAddress>{el.createdAt.slice(0, 10)}</ItemAddress>
         <ItemLike>좋아요 {el.pickedCount}</ItemLike>
       </Wrapper>
     </Link>
