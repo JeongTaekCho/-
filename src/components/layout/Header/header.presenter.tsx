@@ -6,6 +6,7 @@ export const HeaderUi = ({
   onClickToProducts,
   onClickToComunity,
   onClickToMain,
+  onClickSearch,
 }: IHeaderUiProps) => {
   return (
     <S.Wrapper>
@@ -20,7 +21,7 @@ export const HeaderUi = ({
           </S.Menu>
           <S.SubMenuBox>
             <S.SearchInput type="text" placeholder="물품명을 입력해주세요." />
-            <S.SearchSubmit>검색하기</S.SearchSubmit>
+            <S.SearchSubmit onClick={onClickSearch}>검색하기</S.SearchSubmit>
           </S.SubMenuBox>
         </S.Navigation>
       </S.Container>

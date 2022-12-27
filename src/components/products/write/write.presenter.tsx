@@ -1,11 +1,9 @@
 import ProductInput from "../../commons/Inputs/product-input";
 import * as S from "./write.styles";
 import "react-quill/dist/quill.snow.css";
-import dynamic from "next/dynamic";
+import { IProductWriteUiProps } from "./write.types";
 
-// const DynamicReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-
-const ProductWriteUi = () => {
+const ProductWriteUi = ({ onChangeFiles }: IProductWriteUiProps) => {
   return (
     <S.Wrapper>
       <S.Container>
@@ -20,8 +18,13 @@ const ProductWriteUi = () => {
                 type="file"
                 multiple
                 id="file"
-              ></S.FileUploadInput>
+                onChange={onChangeFiles}
+              />
               <S.PhotoUploadBox htmlFor="file">이미지 등록 +</S.PhotoUploadBox>
+              <S.PhotoImg></S.PhotoImg>
+              <S.PhotoImg></S.PhotoImg>
+              <S.PhotoImg></S.PhotoImg>
+              <S.PhotoImg></S.PhotoImg>
             </S.PhotoContainer>
           </S.InputBox>
           <S.InputBox>

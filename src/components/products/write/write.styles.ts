@@ -47,7 +47,7 @@ export const PhotoContainer = styled.div`
   width: 85%;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.7rem;
 `;
 
 export const FileUploadInput = styled.input`
@@ -63,6 +63,15 @@ export const PhotoUploadBox = styled.label`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`;
+
+export const PhotoImg = styled.div`
+  width: 20rem;
+  height: 20rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
 `;
 
 export const InputContianer = styled.div`
